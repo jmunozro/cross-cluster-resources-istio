@@ -1,14 +1,14 @@
 # <center>Sharing resources between AWS and GCP using Istio</center>
 
 ## Table of Contents
-* [0 - Introduction](#introduction)
+* [Introduction](#introduction)
 * [1 - Create the lambda function](#lab-1---create-lambda-function-)
 * [2 - Deploy Istio in an EKS cluster](#lab-2---deploy-istio-eks-)
 * [3 - Deploy Istio in a GCP cluster](#lab-3---deploy-istio-gcp-)
 * [4 - Expose AWS endpoint using Istio mTLS](#lab-4---expose-endpoint-mtls-)
 * [5 - Connect both clusters using Istio gateways and mTLS](#lab-5---connect-clusters-mtls-)
 * [6 - Testing the connection from a pod in GKE](#lab-6---testing-connection-)
-
+* [Learn more](#learn-more)
 ## Introduction <a name="introduction"></a>
 
 In the modernization journey to cloud-native architectures, you will eventually find that a multicloud architecture is a natural step.
@@ -631,7 +631,13 @@ x-envoy-upstream-service-time: 330
 ```
 
 This is a picture of the request that we are making.
+![img4.png](images/img4.png)
 
 **note:** After this setup, it could be convenient to protect the datapath even more using Istio [AuthorizationPolicies](https://istio.io/latest/docs/reference/config/security/authorization-policy/) and [PeerAuthentication](https://istio.io/latest/docs/reference/config/security/peer_authentication/), or stablish a common root of trust between the cluster to achieve end-to-end mTLS with the proxy in [passthrough mode](https://istio.io/latest/docs/tasks/traffic-management/ingress/ingress-sni-passthrough/). I'll leave that exercise for the curious reader.
 
-![img4.png](images/img4.png)
+## Learn more <a name="learn-more"></a>
+We hope you are more confident about the multicloud experience after reading these lines, where we easily share resources that are located in different networks.
+
+To participate in our community and learn more about Istio, join our [Slack channel](https://slack.solo.io/). 
+
+To find out how Istio drives business value, [download our ebook today](https://www.solo.io/resources/ebook/driving-business-value-with-istio/). 

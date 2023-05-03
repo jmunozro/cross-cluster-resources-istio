@@ -90,7 +90,7 @@ We are going to use an EKS cluster deployed in the same VPC as the ALB, so it is
 Let's start by downloading the istioctl binary and deploy the Istio control plane, with some common options:
 
 ```yaml
-export CLUSTER2=jesus-eks-eks-batch1-1
+export CLUSTER2=eks-lab5
 curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.17.2 sh -
 
 # Istiod control-plane, minimal profile
